@@ -3,7 +3,8 @@ crewai==0.157.0
 crewai_tools==0.60.0
 langchain==0.3.27
 langchain_community==0.3.27
-langchain_openai==0.3.30
+# langchain_openai==0.3.30
+langchain_openai==0.2.6
 Markdown==3.8.2
 openai==1.99.9
 PyPDF2==3.0.1
@@ -11,4 +12,5 @@ python-dotenv==1.1.1
 Requests==2.32.4
 streamlit==1.37.1
 # streamlit==1.47.1
-tiktoken==0.9.0
+# tiktoken==0.9.0
+tiktoken==0.7.0
