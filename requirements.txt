@@ -25,11 +25,13 @@ certifi==2025.7.14
 cffi==1.17.1
 charset-normalizer==3.4.2
 chroma-hnswlib==0.7.6
-chromadb==1.0.15
+# chromadb==1.0.15
+chromadb==0.4.24
 click==8.2.1
 cohere==5.16.1
 coloredlogs==15.0.1
-crewai==0.150.0
+# crewai==0.150.0
+crewai==0.63.6
 crewai-tools==0.58.0
 cryptography==45.0.5
 dataclasses-json==0.6.7
@@ -256,5 +258,5 @@ zstandard==0.23.0
 # # streamlit==1.47.1
 # # tiktoken==0.9.0
 # tiktoken
-# pysqlite3-binary
+pysqlite3-binary
 
