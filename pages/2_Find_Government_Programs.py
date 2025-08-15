@@ -34,10 +34,10 @@ compiled_text = user_query_handler2.content_compiler(urls)
 split_text = user_query_handler2.splitter(compiled_text)
 
 vector_store = Chroma.from_documents(
-    # collection_name = "Gov_Support",
+    collection_name = "Gov_Support",
     documents = split_text,
     embedding = embeddings,
-    # persist_directory = "./chroma_db"
+    persist_directory = "./chroma_db"
 )
 
 if form.form_submit_button("Submit"):
@@ -65,7 +65,7 @@ if form.form_submit_button("Submit"):
     st.write(response["answer"])
     print(response)
 
-    # vector_store.delete_collection()
+    vector_store.delete_collection()
 
 
 
