@@ -2,17 +2,17 @@ from crewai import Agent, Task, Crew
 from crewai_tools import WebsiteSearchTool
 
 tool_websearch = WebsiteSearchTool()
-tool_websearch1 = WebsiteSearchTool("https://www.acra.gov.sg/how-to-guides/setting-up-a-local-company")
-tool_websearch2 = WebsiteSearchTool("https://www.edb.gov.sg/en/setting-up-in-singapore/how-to-set-up.html")
-
 
 agent_website = Agent(
     role="Website Extracter",
-    goal = "Collect relevent information on {question} from the specified website(s).",
+    goal = "Collect relevent information on incentives and programs from the Singapore government that could support {question}.",
     backstory = """You are helping to collate information on {question}."
-    The question is asked by a foreign investor interested in setting up a business in Singapore."
+    A company executive will be providing you information on their company or business in {question}.
+    Based on what was shared, you should:
+        1. Suggest appropriate business activities (e.g. headquarters, manufacturing, or R&D) they could establish in Singapore.
+        2. Suggest incentives and programs available in Singapore, by searching websites of Singapore Government ministries and agencies (usually marked by gov.sg).
     Your work is the basis for the agent Content Writer to respond to the user on this question.""",
-    tools = [tool_websearch, tool_websearch1, tool_websearch2],
+    tools = [tool_websearch],
     allow_delegation = False,
     verbose = True,
 )
@@ -23,7 +23,7 @@ agent_writer = writer = Agent(
 
     backstory="""You're working on helping a foreign investor on: {question}.
     You base your writing on the work of the Website Extracter, who provide relevant context about the question.
-    Your objective is to address the business user's question: {question}.""",
+    Your objective is to suggest business activites and relevant incentives and programs based on the company's description in {question}.""",
 
     allow_delegation=False, 
     verbose=True, 

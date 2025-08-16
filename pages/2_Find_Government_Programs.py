@@ -1,50 +1,30 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 # From public libraries
 import streamlit as st
+import openai 
+import markdown
+from bs4 import BeautifulSoup
 
-from helper_functions import llm 
+# From my scripts
+from helper_functions import llm
+from logics import user_query_handler1
 
-st.title('Find out about government programs offered by the Singapore Government here.')
+st.title('Find out about incentives and programs offered by the Singapore Government.\n')
 
 form = st.form(key="form")
 form.subheader("Prompt")
 
-user_prompt = form.text_area("Enter your prompt here", height=150)
+user_prompt = form.text_area("Share about your company and business interests here:", height=150)
 
 if form.form_submit_button("Submit"):
     # Get user input
     st.toast(f"User Input Submitted - {user_prompt}")
 
-    prompt_1 = f"""
-    You are a Singapore government official working for an investment promotion agency. An executive from a company asks you the questions within the delimiters.
-
-    The company is a foreign company, and the executive is unfamiliar with Singapore.
-    The executive would like to be motivated with reasons to come to Singapore, whether that be business opportunities, partnerships, or government programs in Singapore.
+    # Generate response
+    response = user_query_handler1.crew.kickoff(inputs={"question": user_prompt})
     
-    Respond with relevant information on Singapore's offerings that could support the company to set up business activities or find partnerships in Singapore.
-    The information should be specific with examples of programs, instead of providing broad strokes on Singapore's attractiveness for businesses.
-
-    Think step by step.
-
-    <company_query>
-    {user_prompt}
-    </company_query>
-
-    """
-
-    response_1 = llm.get_completion(prompt_1)
-
-    prompt_2 = f"""
-    Of the items suggested, elaborate on how they could be relevant for the company when setting up a business in Singapore. 
-    
-    Think step by step. Provide your response in 3 bullet points for each program.
-
-    <items>
-    {response_1}
-    <items>
-
-    """
-
-    response_2 = llm.get_completion(prompt_2)
-
-    st.write(response_2)
-    print(response_2)
+    st.write(response.raw)
+    print(f"User Input is {user_prompt}")
