@@ -9,7 +9,7 @@ from helper_functions.utility import check_password
 if not check_password():  
     st.stop()
 
-st.title("About Forma")
+st.title("Hi, I'm Forma!")
 
 st.image("https://media.istockphoto.com/id/2103894518/photo/business-partners-in-meeting.jpg?s=612x612&w=0&k=20&c=Yxhksr9gMqIhk7Og8slPhCgov9w5h9al3cFBse3VkHM=")
 
