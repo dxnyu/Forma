@@ -46,5 +46,5 @@ if form.form_submit_button("Submit"):
 
     response_2 = llm.get_completion(prompt_2)
 
-    st.write(response_2["answer"])
+    st.write(response_2)
     print(response_2)
