@@ -11,6 +11,8 @@ if not check_password():
 
 st.title("About Forma")
 
+st.image("https://media.istockphoto.com/id/2103894518/photo/business-partners-in-meeting.jpg?s=612x612&w=0&k=20&c=Yxhksr9gMqIhk7Og8slPhCgov9w5h9al3cFBse3VkHM=")
+
 st.write("Forma is your personalized business assistant in Singapore. \n \
 Forma can help you set up your business in Singapore, find incentives & grants, and suitable business partners. \n \
 Try asking Forma questions you have.")
