@@ -43,12 +43,14 @@ if prompt := st.chat_input("How may I help?"):
     with st.chat_message("assistant"):
         
         system_message = [{"role": "system", "content": system_prompt}]
+        system_message.extend([{"role": m["role"], "content": m["content"]} for m in st.session_state.messages])
         
         stream = llm.client.chat.completions.create(
             model=st.session_state["openai_model"],
-            messages=system_message.extend([{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]),
+            messages=system_message,
             stream=True,
         )
+        
     response = st.write_stream(stream)
 
     st.session_state.messages.append({"role": "assistant", "content": response})
