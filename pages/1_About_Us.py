@@ -12,9 +12,9 @@ st.divider()
 st.subheader("Objectives")
 st.write("""
 Forma serves as a business advisor that:
-        1. Addresses queries on setting up a business in Singapore, including on procedure and regulations
-        2. Based on user input on type of industry or business activity, find relevant government programs that could be of interest to the company
-        3. Provide details to queries on EDB's incentives and programs.
+        \n1. Addresses queries on setting up a business in Singapore, including on procedure and regulations
+        \n2. Based on user input on type of industry or business activity, find relevant government programs that could be of interest to the company
+        \n3. Provide details to queries on EDB's incentives and programs.
 """)
 
 st.divider()
