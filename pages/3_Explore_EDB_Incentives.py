@@ -46,7 +46,6 @@ vector_store = Chroma.from_documents(
 st.title('''Find out about about EDB's incentives and facilitation programs for your business here.''')
 
 form = st.form(key="form")
-form.subheader("Prompt")
 
 user_prompt = form.text_area("Ask your question here:", height=150)
 

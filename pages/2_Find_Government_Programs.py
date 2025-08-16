@@ -15,7 +15,6 @@ from logics import user_query_handler1
 st.title('Find out about incentives and programs offered by the Singapore Government.\n')
 
 form = st.form(key="form")
-form.subheader("Prompt")
 
 user_prompt = form.text_area("Share about your company and business interests here:", height=150)
 

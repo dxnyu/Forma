@@ -4,7 +4,6 @@ from helper_functions import llm
 st.title("Ask me questions on setting up a business entity in Singapore.\n")
 
 form = st.form(key="form")
-form.subheader("Prompt")
 
 user_prompt = form.text_area("Ask your question here:", height=150)
 
@@ -17,11 +16,11 @@ if form.form_submit_button("Submit"):
     You are a Singapore government official working for an investment promotion agency. 
     An executive from a company asks you the query within the delimiters.
 
-    The executive is unfamiliar with the process of setting up an entity in Singapore, and would like to get easy to understand step-by-step advice on how to do so.
+    The executive is unfamiliar with the process of setting up an entity in Singapore, and would like to get more information.
     
     Consider the following about the query:
     - What is the executive asking about, e.g. process or regulations?
-    - What type of information could b relevant for the executive?
+    - What type of information could be relevant for the executive?
 
     Think step by step.
 
@@ -36,11 +35,13 @@ if form.form_submit_button("Submit"):
     response_1 = llm.get_completion(prompt_1)
 
     prompt_2 = f"""
-    Organize the information provided into key steps. Provide your response numerically and with 3 bullet points for each step.
+    Organize the response in the delimiters below into key steps or points. Provide your response with 3 substantiating bullet points.
 
-    <items>
+    Also offer useful websites and resources for reference.
+
+    <response>
     {response_1}
-    <items>
+    <response>
 
     """
 
