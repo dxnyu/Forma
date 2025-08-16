@@ -1,7 +1,10 @@
 from crewai import Agent, Task, Crew
 from crewai_tools import WebsiteSearchTool
 
-tool_websearch = WebsiteSearchTool("https://www.acra.gov.sg/how-to-guides/setting-up-a-local-company")
+tool_websearch = WebsiteSearchTool()
+tool_websearch1 = WebsiteSearchTool("https://www.acra.gov.sg/how-to-guides/setting-up-a-local-company")
+tool_websearch2 = WebsiteSearchTool("https://www.edb.gov.sg/en/setting-up-in-singapore/how-to-set-up.html")
+
 
 agent_website = Agent(
     role="Website Extracter",
@@ -9,7 +12,7 @@ agent_website = Agent(
     backstory = """You are helping to collate information on {question}."
     The question is asked by a foreign investor interested in setting up a business in Singapore."
     Your work is the basis for the agent Content Writer to respond to the user on this question.""",
-    tools = [tool_websearch],
+    tools = [tool_websearch, tool_websearch1, tool_websearch2],
     allow_delegation = False,
     verbose = True,
 )
