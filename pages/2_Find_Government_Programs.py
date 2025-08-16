@@ -2,7 +2,6 @@
 import streamlit as st
 
 from helper_functions import llm 
-# from logics import user_query_handler2 
 
 st.title('Find out about government programs offered by the Singapore Government here.')
 
@@ -45,7 +44,7 @@ if form.form_submit_button("Submit"):
 
     """
 
-    response_2 = llm.getcompletion(prompt_2)
+    response_2 = llm.get_completion(prompt_2)
 
     st.write(response_2["answer"])
     print(response_2)
