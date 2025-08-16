@@ -19,7 +19,8 @@ if prompt := st.chat_input("How may I help?"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        stream = llm.get_completion_by_messages(
+        stream = llm.client.chat.completions.create(
+            model=st.session_state["openai_model"],
             messages=[{"role": m["role"], "content": m["content"]} for m in st.session_state.messages],
             stream=True,
         )
