@@ -5,7 +5,7 @@ st.write("The flowcharts below represent how the LLM generates responses in each
 
 st.subheader("Set Up Your Business in Singapore")
 st.image("https://drive.google.com/file/d/1CBcLnQ1EYGigjkhMfRcvNgV1rFGLEOo-/view?usp=sharing")
-st.image("https://drive.usercontent.google.com/download?id=1CBcLnQ1EYGigjkhMfRcvNgV1rFGLEOo-&export=view&authuser=0")
+st.image("https://drive.google.com/file/d/1CBcLnQ1EYGigjkhMfRcvNgV1rFGLEOo-/preview")
 
 st.subheader("Find Government Support")
 st.image("https://drive.google.com/file/d/1dPOTzeTJS1TaD6LjxiLPZiKD2wTSk3uA/view?usp=drive_link")
