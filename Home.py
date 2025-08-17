@@ -14,8 +14,8 @@ st.title("Hi, I'm Forma!")
 st.image("https://media.istockphoto.com/id/2103894518/photo/business-partners-in-meeting.jpg?s=612x612&w=0&k=20&c=Yxhksr9gMqIhk7Og8slPhCgov9w5h9al3cFBse3VkHM=")
 
 st.write("Forma is your personalized business assistant in Singapore. \n \
-Forma can help you set up your business in Singapore, find incentives & grants, and suitable business partners. \n \
-Try asking Forma questions you have.")
+Forma can help you set up your business in Singapore, and find relevant incentives and programs from the Singapore Government.\n \
+Not sure how to get started? Ask Forma!.")
 
 with st.expander ("See Disclaimer"):
     st.write('''
