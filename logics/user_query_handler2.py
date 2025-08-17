@@ -11,13 +11,11 @@ import hashlib
 
 def content_compiler(urls):
     webpage_texts = ' '
-
     for url in urls:
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
         text = soup.get_text()
         webpage_texts += text
-
     content = Document(page_content=webpage_texts)
     return [content]
 
@@ -33,7 +31,6 @@ def download_pdf(file_id):
         print(f"Using cached PDF for {file_id}")
         with open(cache_path, "rb") as f:
             return f.read()
-            # return Document(page_content=f.read(), metadata={"source":f"{file_id}"})
     
     print(f"Downloading PDF: {file_id}")
     url = f'https://drive.google.com/uc?export=download&id={file_id}' # Files had to be downloaded into Gdrive as EDB website blocked by Incapsula
@@ -42,9 +39,6 @@ def download_pdf(file_id):
         with open(cache_path, "wb") as f:
             f.write(response.content)
         return response.content
-        # return response.content
-        # return Document(page_content=response.content, metadata={"source":f"{file_id}"})
-        # return [content]
     else:
         raise Exception(f"Failed to download: {file_id}")
     
@@ -57,15 +51,11 @@ def extract_text(pdf_bytes):
 
 def compile_pdfs(file_ids):
     corpus_parts = []
-    
     for i, file_id in enumerate(file_ids):
         print(f"Processing PDF {i+1}")
         pdf_bytes = download_pdf(file_id)
         text = extract_text(pdf_bytes)
-        # corpus_parts.append(f"[PDF {i+1} - ID {file_id}]\n{text}")
         corpus_parts.append(Document(page_content=text, metadata={"source":file_id}))
-    # full_corpus = "\n\n".join(corpus_parts)
-    # return full_corpus
     return corpus_parts
 
 # Splitters
