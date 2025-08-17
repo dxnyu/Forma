@@ -12,6 +12,11 @@ from bs4 import BeautifulSoup
 from helper_functions import llm
 from logics import user_query_handler1
 
+from helper_functions.utility import check_password
+
+if not check_password():  
+    st.stop()
+
 st.title('Find out about incentives and programs offered by the Singapore Government.\n')
 
 form = st.form(key="form")

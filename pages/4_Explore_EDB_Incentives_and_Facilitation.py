@@ -10,6 +10,10 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 
 from logics import user_query_handler2 
+from helper_functions.utility import check_password
+
+if not check_password():  
+    st.stop()
 
 llm = ChatOpenAI(model='gpt-4o-mini')
 embeddings = OpenAIEmbeddings(model='text-embedding-3-small')

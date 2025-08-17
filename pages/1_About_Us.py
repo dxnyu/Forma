@@ -1,4 +1,9 @@
 import streamlit as st
+from helper_functions.utility import check_password
+
+# Check if the password is correct.  
+if not check_password():  
+    st.stop()
 
 st.title("About Us")
 
@@ -29,5 +34,7 @@ st.divider()
 
 st.subheader("Features")
 st.write("""
-Search functions that gather relevant information for the user.
+1. Set Up Your Business in Singapore: ChatBot that responds to user queries based on LLM generated responses\n
+2. Find Government Support: CrewAI flow to respond to user queries\n
+3. Explore EDB Incentives and Facilitation: RAG based on EDB incentive and facilitation factsheets to respond to user queries
         """)

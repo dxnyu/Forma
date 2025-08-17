@@ -44,7 +44,7 @@ task_write = Task(
     description="""\
     1. Use the content plan to craft a business plan on {question} based on the target audience's interests.
     2. Sections/Subtitles are properly named in an engaging manner.
-    3. Ensure the post is structured with an engaging introduction, insightful body, and a summarizing conclusion with call to action.
+    3. Ensure the post is structured with an engaging introduction, insightful body, and a summarizing conclusion.
     4. Proofread for grammatical errors and alignment the common style used in business reports.""",
 
     expected_output="""

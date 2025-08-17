@@ -1,5 +1,9 @@
 import streamlit as st
 from helper_functions import llm
+from helper_functions.utility import check_password
+
+if not check_password():  
+    st.stop()
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-4o-mini"
