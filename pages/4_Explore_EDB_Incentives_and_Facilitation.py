@@ -42,7 +42,7 @@ vector_store = Chroma.from_documents(
     persist_directory = "./edb_db"
 )
 
-st.title('''Find out how EDB's incentives and facilitation programs could support your business.''')
+st.title('''Find out how EDB's incentives and facilitation could support your business.''')
 
 form = st.form(key="form")
 
@@ -63,10 +63,10 @@ if form.form_submit_button("Submit"):
                                               
     Instructions:
     - Answer based ONLY on the provided context
-    - If the answer cannot be found in the context, respond with "I don't have that information"
     - Be specific and cite relevant parts of the context
     - Keep answers concise but complete
-    - For information on incentive amounts (percentages) or criteria, provide your response in the form of an organized table.                                       
+    - For information on incentive amounts (percentages) or criteria, provide your response in the form of an organized table. 
+    - If the question asked is out of the provided context, respond with "I don't have that information"                                      
     """)
 
     chain = create_retrieval_chain(
