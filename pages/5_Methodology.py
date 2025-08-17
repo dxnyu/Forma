@@ -1,4 +1,8 @@
 import streamlit as st
+from helper_functions.utility import check_password
+
+if not check_password():  
+    st.stop()
 
 st.title("Methodology")
 st.write("The flowcharts below represent how the LLM generates responses in each feature")
