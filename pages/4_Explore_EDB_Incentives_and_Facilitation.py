@@ -64,8 +64,6 @@ if form.form_submit_button("Submit"):
     Instructions:
     - Answer based ONLY on the provided context
     - State which incentive or facilitation you are obtaining the response for
-    - Be specific and cite relevant parts of the context
-    - Keep answers concise but complete
     - For information on incentive amounts (percentages) or criteria, provide your response in the form of an organized table. 
     - If the question asked is out of the provided context, respond with "I don't have that information"                                      
     """)
