@@ -26,6 +26,7 @@ st.divider()
 
 st.subheader("Data Sources")
 st.write("""
+- Web / Internet
 - Singapore Government websites
 - EDB Incentives and Facilitation factsheets (as found on https://www.edb.gov.sg/en/incentives-and-programmes/incentives-and-facilitation-programmes.html)
         """)

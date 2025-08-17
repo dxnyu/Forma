@@ -15,7 +15,7 @@ st.image("https://media.istockphoto.com/id/2103894518/photo/business-partners-in
 
 st.write("Forma is your personalized business assistant in Singapore. \n \
 Forma can help you set up your business in Singapore, and find relevant incentives and programs from the Singapore Government.\n \
-Not sure how to get started? Ask Forma!.")
+Not sure how to get started in Singapore? Ask Forma!.")
 
 with st.expander ("See Disclaimer"):
     st.write('''
