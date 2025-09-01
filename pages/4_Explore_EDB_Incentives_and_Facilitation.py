@@ -41,7 +41,7 @@ corpus = user_query_handler2.compile_pdfs(pdf_ids)
 corpus_split = user_query_handler2.splitter(corpus)
 
 vector_store = FAISS.from_documents(
-    collection_name = "EDB_Incentives",
+    # collection_name = "EDB_Incentives",
     documents = corpus_split,
     embedding = embeddings,
     # persist_directory = "./edb_db"
