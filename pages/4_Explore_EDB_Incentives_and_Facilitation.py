@@ -45,7 +45,7 @@ vector_store = Chroma.from_documents(
     documents = corpus_split,
     embedding = embeddings,
     # persist_directory = "./edb_db"
-    client = chromadb.EphemeralClient()
+    client = chromadb.Client()
 )
 
 st.title('''Find out how EDB's incentives and facilitation could support your business.''')
