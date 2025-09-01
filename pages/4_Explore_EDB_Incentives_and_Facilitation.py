@@ -1,8 +1,8 @@
 # From public libraries
 import streamlit as st
-import chromadb
 
-from langchain_community.vectorstores import Chroma
+# from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 
 from langchain.chains.retrieval import create_retrieval_chain
@@ -40,14 +40,11 @@ corpus = user_query_handler2.compile_pdfs(pdf_ids)
 
 corpus_split = user_query_handler2.splitter(corpus)
 
-cclient = chromadb.Client()
-
-vector_store = Chroma.from_documents(
+vector_store = FAISS.from_documents(
     collection_name = "EDB_Incentives",
     documents = corpus_split,
     embedding = embeddings,
     # persist_directory = "./edb_db"
-    client = cclient
 )
 
 st.title('''Find out how EDB's incentives and facilitation could support your business.''')
