@@ -84,4 +84,4 @@ if form.form_submit_button("Submit"):
     st.write(response["answer"])
     print(response)
 
-    vector_store.delete_collection()
+    # vector_store.delete_collection()
