@@ -5,7 +5,6 @@ from langchain.docstore.document import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import io
 from PyPDF2 import PdfReader
-import hashlib
 
 # For html to txt
 
