@@ -1,19 +1,15 @@
 crewai==0.157.0
 crewai_tools==0.60.0
 langchain==0.3.27
-# langchain_community==0.3.27
+langchain_community==0.3.27
 langchain_openai
 Markdown==3.8.2
 openai==1.99.9
 PyPDF2==3.0.1
 python-dotenv==1.1.1
 Requests==2.32.4
-# streamlit==1.37.1
+streamlit==1.37.1
 tiktoken
 pysqlite3-binary
-
-streamlit
-pysqlite3-binary
 chromadb==0.4.15
-langchain-community==0.0.38
-langchain-chroma==0.1.2
+
