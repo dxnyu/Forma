@@ -1,6 +1,5 @@
 # From public libraries
 import streamlit as st
-import tempfile
 
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
@@ -45,7 +44,6 @@ vector_store = Chroma.from_documents(
     documents = corpus_split,
     embedding = embeddings,
     # persist_directory = "./edb_db"
-    persist_directory = tempfile.mkdtemp()
 )
 
 st.title('''Find out how EDB's incentives and facilitation could support your business.''')
